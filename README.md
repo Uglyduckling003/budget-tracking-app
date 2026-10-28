@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Budget Tracker
 
-## Getting Started
+Welcome to the Next.js Budget Tracker application. Follow the guide below to set up your local development environment.
 
-First, run the development server:
+## 🚀 Prerequisites
 
+Before you begin, ensure you have the following installed:
+* **Node.js**: `v20.x` (LTS recommended)
+* **Package Manager**: `npm` (v10.x or higher)
+
+## 🛠️ Local Setup
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repository-url>
+cd nextjs-budget-tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+Install the required project dependencies using the package manager:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Environment Configuration
+The application requires environment variables to connect to external services (e.g., database, authentication).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Copy the example environment file to create a local environment file:
+   ```bash
+   cp .env.example .env.local
+   ```
+2. Open `.env.local` and populate the variables with your local or development credentials. **Do not commit your `.env.local` file to version control.**
 
-## Learn More
+Example of required variables:
+* `DATABASE_URL`: Connection string for your local or cloud database (e.g., `postgresql://user:password@localhost:5432/budget_db`)
+* `NEXTAUTH_SECRET`: A random string used to hash tokens for authentication.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💻 Development Commands
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Start the Development Server
+Run the following command to start the application locally:
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-## Deploy on Vercel
+### Code Linting
+To check the codebase for syntax and formatting errors, run:
+```bash
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Production Build
+To verify that the application compiles correctly for a production deployment, run:
+```bash
+npm run build
+```
